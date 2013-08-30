@@ -28,9 +28,3 @@ function range(from, to, steps) {
 
   return arr;
 }
-
-function test(from, to, steps) {
-  console.log({ from: from, to: to, steps: steps}, range.apply(null, arguments));
-}
-
-test(0, -10, 2)
