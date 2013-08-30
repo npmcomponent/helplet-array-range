@@ -9,6 +9,45 @@
 
     $ component install helplet/array-range
 
+## Usage
+
+    var range = require("array-range");
+
+    console.log(range( 4)); // [0,  1,  2,  3]
+    console.log(range(-4)); // [0, -1, -2, -3]
+
+    console.log(range( 1,  4)); // [        1,  2,  3]
+    console.log(range(-1,  4)); // [-1, 0,  1,  2,  3]
+    console.log(range(-1, -4)); // [       -1, -2, -3]
+    console.log(range( 1, -4)); // [ 1, 0, -1, -2, -3]
+
+    console.log(range(1, 5,  2)); // [1, 3]
+    console.log(range(1, 5, -2)); // [1, 3]
+    console.log(range(1, 3, .5)); // [1, 1.5, 2.5]
+
+    // You can also mount `range` to the Array.prototype
+    Array.prototype.range = range;
+
+    var arr = [1, 2, 3];
+    arr.range(5);
+    console.log(arr); // [1, 2, 3, 0, 1, 2, 3, 4];
+
+    // You can also bind it to an array
+    var arr = []
+      , addRange = range.bind(arr);
+    addRange(3);
+    addRange(5, 10);
+    console.log(arr) // [0, 1, 2, 5, 6, 7, 8, 9]
+
+    // And you can call it on an array
+    var arr = [];
+    range.call(arr, 3);
+    range.call(arr, 5, 10);
+    console.log(arr) // [0, 1, 2, 5, 6, 7, 8, 9]
+
+    // ????
+    // PROFIT!!!
+
 ## API
 
 ### range([from], to, [steps])
