@@ -1,0 +1,15 @@
+{
+  "name": "helplet-array-range",
+  "description": "Python's range(from, to, steps) in JavaScript.",
+  "version": "0.0.2",
+  "keywords": [
+    "array",
+    "util",
+    "range",
+    "generator",
+    "number"
+  ],
+  "main": "index.js",
+  "dependencies": {},
+  "license": "MIT"
+}
